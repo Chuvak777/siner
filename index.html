@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>SINNER™ | Полное сопровождение выезда из Украины</title>
+    <!-- Font Awesome 6 (free icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Plus Jakarta Sans (modern, clean) -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a0a0f;
+            background-image: radial-gradient(circle at 15% 30%, rgba(25, 25, 40, 0.6) 0%, #0a0a0f 90%);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #eef2ff;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* кастомный скролл */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #14141c;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c9a53b;
+            border-radius: 8px;
+        }
+
+        /* общие контейнеры */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* стили для заголовков и текста */
+        h1, h2, h3 {
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .section-title {
+            font-size: 2.4rem;
+            margin-bottom: 1.2rem;
+            background: linear-gradient(135deg, #f5e7c8 0%, #e4bc6e 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        .section-sub {
+            color: #9ca3af;
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* кнопки и бейджи */
+        .btn-gold {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(95deg, #c9a53b 0%, #b8860b 100%);
+            border: none;
+            padding: 14px 32px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #0a0a0f;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(201, 165, 59, 0.25);
+            cursor: pointer;
+            text-decoration: none;
+            font-family: inherit;
+        }
+
+        .btn-gold i {
+            font-size: 1.2rem;
+            transition: transform 0.2s;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(95deg, #dbb24e 0%, #c69c2e 100%);
+            box-shadow: 0 14px 28px rgba(201, 165, 59, 0.35);
+        }
+
+        .btn-gold:hover i {
+            transform: translateX(4px);
+        }
+
+        .btn-outline-light {
+            background: transparent;
+            border: 1px solid rgba(201, 165, 59, 0.6);
+            padding: 12px 28px;
+            border-radius: 40px;
+            color: #e4bc6e;
+            font-weight: 600;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-outline-light:hover {
+            background: rgba(201, 165, 59, 0.12);
+            border-color: #c9a53b;
+            color: #f5deae;
+        }
+
+        /* header / логотип */
+        .navbar {
+            padding: 24px 0 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            border-bottom: 1px solid rgba(201, 165, 59, 0.2);
+        }
+
+        .logo {
+            font-size: 2.1rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            background: linear-gradient(145deg, #f8e2b0, #dbb04e);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 3px rgba(0,0,0,0.2);
+        }
+        .logo span {
+            font-size: 1.7rem;
+        }
+
+        /* hero секция */
+        .hero {
+            padding: 60px 0 80px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-content {
+            flex: 1.2;
+        }
+
+        .hero-badge {
+            background: rgba(201, 165, 59, 0.18);
+            backdrop-filter: blur(4px);
+            padding: 6px 14px;
+            border-radius: 60px;
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #e9c989;
+            margin-bottom: 24px;
+            border: 0.5px solid rgba(201, 165, 59, 0.4);
+        }
+
+        .hero h1 {
+            font-size: 3.4rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 .highlight {
+            color: #e4bc6e;
+            border-bottom: 3px solid #e4bc6e;
+            display: inline-block;
+        }
+
+        .hero-desc {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            max-width: 550px;
+            margin-bottom: 32px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 28px;
+            margin-top: 24px;
+        }
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #e9c989;
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        .hero-visual {
+            flex: 0.9;
+            background: rgba(30, 30, 45, 0.4);
+            backdrop-filter: blur(8px);
+            border-radius: 42px;
+            padding: 20px;
+            border: 1px solid rgba(201, 165, 59, 0.3);
+            text-align: center;
+            box-shadow: 0 20px 35px -15px rgba(0,0,0,0.5);
+        }
+        .hero-visual i {
+            font-size: 4rem;
+            color: #e4bc6e;
+            margin-bottom: 16px;
+        }
+        .hero-visual p {
+            font-weight: 500;
+            margin-top: 12px;
+            color: #ddd8cc;
+        }
+
+        /* карточки услуг - ровные, одинаковой высоты, 2 карточки */
+        .services {
+            padding: 70px 0 50px;
+        }
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 20px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .service-card {
+            background: rgba(20, 20, 30, 0.7);
+            backdrop-filter: blur(4px);
+            border-radius: 28px;
+            padding: 30px 24px;
+            transition: all 0.3s;
+            border: 1px solid rgba(201, 165, 59, 0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(201, 165, 59, 0.6);
+            background: rgba(28, 28, 40, 0.8);
+        }
+        .card-icon {
+            font-size: 2.6rem;
+            color: #e4bc6e;
+            margin-bottom: 20px;
+        }
+        .service-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+        }
+        .service-card p {
+            color: #b9c3d4;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            flex: 1;
+        }
+
+        /* процесс сопровождения */
+        .process {
+            padding: 40px 0 70px;
+        }
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .step {
+            flex: 1;
+            min-width: 180px;
+            background: #12121a;
+            border-radius: 28px;
+            padding: 24px 16px;
+            text-align: center;
+            border-bottom: 3px solid #e4bc6e;
+        }
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: #c9a53b20;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #e9c177;
+        }
+
+        /* блок telegram CTA */
+        .tg-cta {
+            background: linear-gradient(115deg, #0d0d15 0%, #14141f 100%);
+            border-radius: 48px;
+            margin: 50px 0 70px;
+            padding: 50px 40px;
+            text-align: center;
+            border: 1px solid rgba(201, 165, 59, 0.5);
+            box-shadow: 0 20px 30px -15px black;
+        }
+        .tg-cta h2 {
+            font-size: 2.2rem;
+            margin-bottom: 16px;
+        }
+        .tg-cta p {
+            max-width: 550px;
+            margin: 0 auto 28px;
+            color: #cbd5e6;
+        }
+        .telegram-link {
+            background: #1f2a36;
+            padding: 14px 28px;
+            border-radius: 80px;
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: 0.2s;
+            border: 1px solid #c9a53b70;
+            text-decoration: none;
+            color: #f0e3c9;
+        }
+        .telegram-link i {
+            font-size: 1.9rem;
+            color: #27a5e7;
+        }
+        .telegram-link:hover {
+            background: #2a3745;
+            transform: scale(1.02);
+            border-color: #e4bc6e;
+        }
+
+        /* важное уточнение - без предоплат */
+        .no-prepayment {
+            background: rgba(201, 165, 59, 0.1);
+            border-left: 4px solid #c9a53b;
+            border-radius: 16px;
+            padding: 20px 28px;
+            margin: 30px 0 20px;
+            text-align: center;
+        }
+        .no-prepayment p {
+            font-size: 1.1rem;
+            color: #f0e6d0;
+        }
+        .no-prepayment i {
+            color: #c9a53b;
+            font-size: 1.3rem;
+            margin-right: 10px;
+        }
+        .no-prepayment strong {
+            color: #e4bc6e;
+        }
+
+        /* футер */
+        footer {
+            padding: 40px 0 30px;
+            border-top: 1px solid rgba(201, 165, 59, 0.2);
+            text-align: center;
+            color: #7e8aa2;
+        }
+
+        /* responsive */
+        @media (max-width: 880px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-content {
+                text-align: center;
+            }
+            .hero-desc {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-stats {
+                justify-content: center;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .tg-cta {
+                padding: 36px 20px;
+            }
+            .cards-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+        }
+        @media (max-width: 560px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            .btn-gold {
+                padding: 12px 22px;
+                font-size: 1rem;
+            }
+        }
+
+        /* анимация появления */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.7s forwards;
+        }
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.35s; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- навигация + логотип -->
+    <div class="navbar">
+        <div class="logo">
+            sɪɴɴᴇʀ™
+        </div>
+        <div>
+            <a href="#services" class="btn-outline-light" style="margin-right: 12px;"><i class="fas fa-compass"></i> Услуги</a>
+            <a href="#contact-telegram" class="btn-gold" style="padding: 10px 24px;"><i class="fab fa-telegram"></i> Telegram</a>
+        </div>
+    </div>
+
+    <!-- Hero блок -->
+    <div class="hero fade-up">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-shield-alt"></i> Полное сопровождение
+            </div>
+            <h1>
+                Выезд из Украины<br>
+                <span class="highlight">без рисков</span> и забот
+            </h1>
+            <p class="hero-desc">
+                Полный цикл поддержки: логистика, безопасные маршруты, консультации 24/7. 
+                Ваша спокойная дорога — наша ответственность.
+            </p>
+            <div class="hero-stats">
+                <div class="stat-item"><span class="stat-number">500+</span><span class="stat-label">успешных выездов</span></div>
+                <div class="stat-item"><span class="stat-number">24/7</span><span class="stat-label">онлайн поддержка</span></div>
+                <div class="stat-item"><span class="stat-number">100%</span><span class="stat-label">конфиденциально</span></div>
+            </div>
+            <div style="margin-top: 32px;">
+                <a href="#contact-telegram" class="btn-gold"><i class="fab fa-telegram"></i> Связаться сейчас</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <i class="fas fa-passport"></i>
+            <i class="fas fa-plane-departure" style="margin-left: 12px;"></i>
+            <p>sɪɴɴᴇʀ™ сопровождение — <strong>выезд без задержек</strong></p>
+            <div style="font-size: 0.8rem; margin-top: 12px;"><i class="fas fa-check-circle" style="color:#c9a53b;"></i> пересечение границы под ключ</div>
+        </div>
+    </div>
+
+    <!-- Услуги / Сервисы - ровные карточки, без юридической поддержки -->
+    <div id="services" class="services">
+        <h2 class="section-title fade-up delay-1">Наши услуги</h2>
+        <p class="section-sub fade-up delay-1">От первого звонка до финальной точки — полный спектр услуг для безопасного перемещения.</p>
+        <div class="cards-grid">
+            <div class="service-card fade-up delay-1">
+                <div class="card-icon"><i class="fas fa-route"></i></div>
+                <h3>Безопасные маршруты</h3>
+                <p>Актуальная информация о границах, очередях, альтернативных путях и трансфере. Поможем выбрать оптимальный маршрут с учетом текущей ситуации.</p>
+            </div>
+            <div class="service-card fade-up delay-2">
+                <div class="card-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                <h3>Полное сопровождение 24/7</h3>
+                <p>Личный менеджер на связи на всех этапах, помощь с жильем, трансфером и логистикой. Поддержка в режиме реального времени.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ВАЖНОЕ УТОЧНЕНИЕ: БЕЗ ПРЕДОПЛАТ -->
+    <div class="no-prepayment">
+        <p><i class="fas fa-hand-holding-usd"></i> <strong>Важное уточнение:</strong> Мы работаем <strong>БЕЗ ПРЕДОПЛАТ</strong>. Вся детальная информация — в личном общении. Оплата только по факту выполнения услуг!</p>
+    </div>
+
+    <!-- Процесс сопровождения (этапы) -->
+    <div class="process">
+        <h2 class="section-title">Как мы работаем?</h2>
+        <p class="section-sub">Прозрачно, быстро, без лишних нервов</p>
+        <div class="steps">
+            <div class="step"><div class="step-number">1</div><h3>Заявка</h3><p>Оставляете заявку в Telegram, мы связываемся за 5 минут</p></div>
+            <div class="step"><div class="step-number">2</div><h3>Консультация</h3><p>Обсуждаем детали, подбираем оптимальный вариант</p></div>
+            <div class="step"><div class="step-number">3</div><h3>Маршрут</h3><p>Разрабатываем индивидуальный план пересечения границы</p></div>
+            <div class="step"><div class="step-number">4</div><h3>Сопровождение</h3><p>Поддержка 24/7 до финальной точки назначения</p></div>
+        </div>
+    </div>
+
+    <!-- Главный блок Telegram с ссылкой на канал/чат -->
+    <div id="contact-telegram" class="tg-cta fade-up">
+        <i class="fab fa-telegram" style="font-size: 3rem; color: #c9a53b; margin-bottom: 12px; display: inline-block;"></i>
+        <h2>Остались вопросы? <span style="color:#e4bc6e;">Напишите нам!</span></h2>
+        <p>Переходите в Telegram <strong>@sinner_go_ua</strong> или нажмите кнопку ниже — мы ответим мгновенно. Поможем с выездом, подберем маршрут и предоставим полное сопровождение.</p>
+        <a href="https://t.me/sinner_go_ua" target="_blank" rel="noopener noreferrer" class="telegram-link">
+            <i class="fab fa-telegram"></i> @sinner_go_ua
+            <i class="fas fa-arrow-right"></i>
+        </a>
+        <div style="margin-top: 24px;">
+            <a href="https://t.me/sinner_go_ua" target="_blank" class="btn-gold" style="background: #1f2a36; color:#f2e2bc; box-shadow: none;"><i class="fab fa-telegram"></i> Перейти в чат</a>
+        </div>
+        <p style="font-size: 0.8rem; margin-top: 28px;"><i class="fas fa-lock"></i> 100% конфиденциально. Помощь с выездом — легально и безопасно. Без предоплат!</p>
+    </div>
+
+    <!-- Футер с доп. ссылкой на TG -->
+    <footer>
+        <div class="logo" style="font-size: 1.5rem; margin-bottom: 8px;">sɪɴɴᴇʀ™</div>
+        <p>Полное сопровождение выезда из Украины | С заботой о каждом клиенте</p>
+        <div style="margin: 16px 0 8px;">
+            <a href="https://t.me/sinner_go_ua" target="_blank" style="color:#c9a53b; text-decoration: none; margin: 0 12px;"><i class="fab fa-telegram"></i> Telegram: @sinner_go_ua</a>
+        </div>
+        <p style="font-size: 0.75rem;">© 2025 SINNER — Все права защищены. Работаем без предоплат, вся информация в личном общении.</p>
+    </footer>
+</div>
+
+<!-- Интерактивная фишка — всплывающее сообщение при клике на кнопку "Telegram" -->
+<script>
+    (function() {
+        const tgButtons = document.querySelectorAll('.btn-gold, .telegram-link, a[href*="t.me/sinner_go_ua"]');
+        function showFunToast() {
+            const toast = document.createElement('div');
+            toast.innerText = '🚀 Перенаправление в Telegram — свяжемся за 30 секунд!';
+            toast.style.position = 'fixed';
+            toast.style.bottom = '30px';
+            toast.style.left = '50%';
+            toast.style.transform = 'translateX(-50%)';
+            toast.style.background = '#1f1f2e';
+            toast.style.color = '#e9cd91';
+            toast.style.padding = '12px 24px';
+            toast.style.borderRadius = '60px';
+            toast.style.fontWeight = '600';
+            toast.style.backdropFilter = 'blur(12px)';
+            toast.style.border = '1px solid #c9a53b';
+            toast.style.zIndex = '9999';
+            toast.style.fontSize = '0.9rem';
+            toast.style.boxShadow = '0 5px 15px black';
+            toast.style.whiteSpace = 'nowrap';
+            document.body.appendChild(toast);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 400);
+            }, 2300);
+        }
+        tgButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                if(btn.tagName === 'A' && btn.href && btn.href.includes('t.me')) {
+                    setTimeout(() => { showFunToast(); }, 50);
+                } else if(btn.classList && btn.classList.contains('btn-gold') && !btn.href?.includes('t.me')) {
+                    const tgSection = document.getElementById('contact-telegram');
+                    if(tgSection) {
+                        e.preventDefault();
+                        tgSection.scrollIntoView({ behavior: 'smooth' });
+                        showFunToast();
+                    }
+                }
+            });
+        });
+        const contactBtn = document.querySelector('a[href="#contact-telegram"]');
+        if(contactBtn) {
+            contactBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.getElementById('contact-telegram').scrollIntoView({ behavior: 'smooth' });
+                showFunToast();
+            });
+        }
+        const cards = document.querySelectorAll('.service-card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const icon = card.querySelector('.card-icon i');
+                if(icon) icon.style.transform = 'scale(1.1)';
+            });
+            card.addEventListener('mouseleave', () => {
+                const icon = card.querySelector('.card-icon i');
+                if(icon) icon.style.transform = 'scale(1)';
+            });
+        });
+        console.log('sɪɴɴᴇʀ™ — готов к работе! Работаем без предоплат.');
+    })();
+</script>
+</body>
+</html>
